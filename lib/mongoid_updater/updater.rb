@@ -15,7 +15,10 @@ module MongoidUpdater
     end
 
     def record_updater
-      self.updated_by = MongoidUpdater.updater
+      updater = MongoidUpdater.updater
+      unless updater.nil?
+        self.updated_by = MongoidUpdater.updater
+      end
     end
 
   end
