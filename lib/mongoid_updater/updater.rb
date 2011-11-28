@@ -7,6 +7,8 @@ module MongoidUpdater
         include Mongoid::Versioning
       end
 
+      attr_accessible :updated_by_id, :updated_by_type, :version
+
       belongs_to :updated_by, :polymorphic => true
 
       before_create :record_updater
